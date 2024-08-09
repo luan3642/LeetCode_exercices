@@ -1,49 +1,39 @@
-package easy;
-
-import java.util.Iterator;
-
-public class PalindromeNumber {
-	public boolean isPalindromeNumber(int value) {
-
-		return false;
-	}
-
-	public static void main(String[] args) {
-		Integer value = 121;
-		int j = 0;
-		int[] vetorFront = new int[2];
-		int[] vetorBack = new int[vetorFront.length];
-		
-		String numberStr = Integer.toString(value);
-		
-		for(int i = 0; i<numberStr.length(); i++) {
-			int digitFront = Character.getNumericValue(numberStr.charAt(i));
-			System.out.println(digitFront);
-			vetorFront[i] = digitFront;
-			
-		}
-		System.out.println();
-		for(int i = numberStr.length()-1; i>=0; i--) {
-			int digitFront = Character.getNumericValue(numberStr.charAt(i));
-			System.out.println(digitFront);
-			vetorBack[j] = digitFront;
-			j++;
-		}
-		
-		
-		for (int i : vetorBack) {
-			if(vetorFront[i] == vetorBack[i]) {
-				System.out.println("palindromo");
-			} else {
-				System.out.println("nao");
-			}
-		}
-		
-		
+	package easy;
 	
-		
-		
-		
+	import java.util.Iterator;
+	
+	public class PalindromeNumber {
+		public boolean isPalindromeNumber(int value) {
+	
+			String valueString = Integer.toString(value);
+			int vetorFront[] = new int[valueString.length()];
+			int vetorBack[] = new int[valueString.length()];
+			int j = 0;
+			int digit = 0;
+	
+			for (int i = 0; i < valueString.length(); i++) {
+				digit = Character.getNumericValue(valueString.charAt(i));
+				vetorFront[i] = digit;
+			}
+	
+			for (int i = valueString.length() - 1; i >= 0; i--) {
+				int digitBack = Character.getNumericValue(valueString.charAt(i));
+				vetorBack[j] = digitBack;
+				j++;
+			}
+	
+			for(int i = 0; i <vetorBack.length; i ++) {
+				if(vetorBack[i] != vetorFront[i]) {
+					return false;
+				}
+			}
+			return true;
+		}
+	
+		public static void main(String[] args) {
+			PalindromeNumber palindromeNumber = new PalindromeNumber();
+			System.out.println(palindromeNumber.isPalindromeNumber(-151));
+	
+		}
+	
 	}
-
-}
