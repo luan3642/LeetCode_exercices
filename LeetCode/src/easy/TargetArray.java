@@ -25,22 +25,12 @@ public class TargetArray {
 		
 		System.out.println("valor target: "+target);
 		
-		int soma[] = new int[array.length];
-		int posix = 0;
-		int posiy = 0;
+	
 		
-		for(int i = 0; i <array.length - 1; i++) {
-			soma[i] = array[indiceAletorio1] + array[indiceAleatorio2];
-			
-			if(array[indiceAletorio1] + array[indiceAleatorio2] == target) {
-				posix = i;
-				posiy = i+1;
-			}
-
-		}
 		
-		System.out.println("A posicao da soma que resulta em "+target + " é: "+posix);
-		System.out.println("A posicao da soma que resulta em "+target + " é: "+posiy);
+		
+		System.out.println("A posicao da soma que resulta em "+target + " é: "+indiceAleatorio2);
+		System.out.println("A posicao da soma que resulta em "+target + " é: "+indiceAletorio1);
 		
 		
 	}
